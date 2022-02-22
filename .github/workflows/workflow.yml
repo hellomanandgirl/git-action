@@ -16,6 +16,3 @@ steps:
 - name: Deploy
   run: |-
     gsutil -m rsync -R output gs://$GCS_BUCKET
-
-
-![{{alt text}}](https://github.com/{{github user}}/{{github repo}}/workflows/{{workflow%20name}}/badge.svg)
