@@ -17,13 +17,17 @@ jobs:
       with:
         ref: main
 
-    - name: Setup gcloud
+    - name: auth
       uses: google-github-actions/auth@v0
       with:
         credentials_json: ${{ secrets.JSON_CREDENTIALS }}
 
-
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v0'
+    
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
+    
     - name: Deploy
       run: |-
         gsutil -m rsync -R /home/runner/work/git-action/git-action gs://$GCS_BUCKET
-        
