@@ -18,7 +18,7 @@ jobs:
         ref: main
 
     - name: Setup gcloud
-      uses: google-github-actions/setup-gcloud@v0
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         service_account_key: ${{ secrets.GITACTION_TEST_KEY_BASE64 }}
         project_id: ${{ secrets.GITACTION_TEST_PROJECT_ID }}
