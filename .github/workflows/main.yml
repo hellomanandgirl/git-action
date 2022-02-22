@@ -25,4 +25,4 @@ jobs:
 
     - name: Deploy
       run: |-
-        gsutil -m rsync -R /file/hellomanandgirl/git-action gs://$GCS_BUCKET
+        gsutil -m rsync -R hellomanandgirl/git-action/main/file gs://$GCS_BUCKET
