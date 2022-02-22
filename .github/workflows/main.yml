@@ -26,3 +26,4 @@ jobs:
     - name: Deploy
       run: |-
         gsutil -m rsync -R /home/runner/work/git-action/git-action gs://$GCS_BUCKET
+        
