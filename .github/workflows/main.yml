@@ -35,4 +35,4 @@ jobs:
     
     - name: Deploy
       run: |-
-        gsutil -m rsync -R /home/runner/work/git-action/git-action/file/ gs://$GCS_BUCKET/deploy_${{  date  }}.file
+        gsutil -m rsync -R /home/runner/work/git-action/git-action/file/ gs://$GCS_BUCKET/deploy_$GCS_BUCKET.file
