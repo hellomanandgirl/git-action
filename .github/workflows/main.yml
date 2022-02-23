@@ -11,7 +11,6 @@ on:
 
 env:
   GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
-  RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
 #job 설정
 jobs:
   deploy:
@@ -36,4 +35,4 @@ jobs:
     
     - name: Deploy
       run: |-
-        gsutil -m rsync -R /home/runner/work/git-action/git-action/file/ gs://$GCS_BUCKET/deploy_$HASH_TAG.file
+        gsutil -m rsync -R /home/runner/work/git-action/git-action/file/ gs://$GCS_BUCKET/deploy_${{  date  }}.file
