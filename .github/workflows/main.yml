@@ -6,6 +6,7 @@ on:
     - main
 env:
   GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+  HASH_TAG: ${{ github.sha }}
 
 jobs:
   deploy:
@@ -30,5 +31,5 @@ jobs:
     
     - name: Deploy
       run: |-
-        gsutil -m rsync -R /home/runner/work/git-action/git-action gs://$GCS_BUCKET
+        gsutil -m rsync -R /home/runner/work/git-action/git-action gs://$GCS_BUCKET/deploy_$HASH_TAG.file
         
